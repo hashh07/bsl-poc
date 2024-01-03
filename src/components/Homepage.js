@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import img from '../images/mainImg.jpeg'
 import styles from '../styles'
 import ImageIcon from '@mui/icons-material/Image';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import MeetingRoomOutlinedIcon from '@mui/icons-material/MeetingRoomOutlined';
+import Modal from './Modal';
 
 const Homepage = () => {
+    const [toggle, setToggle] = useState(true)
     const mainPhoto = {
         position: 'absolute',
         top: '50%',
@@ -56,13 +58,16 @@ const Homepage = () => {
                     <label style={{ fontWeight: '500' }}>POC Header</label>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <div style={buttons}><ImageIcon style={fonts} /> <label style={label}>Menu 1 </label></div>
+                    <div style={buttons} onClick={() => setToggle(prev => !prev)}><ImageIcon style={fonts} /> <label style={label}>Menu 1 </label></div>
                     <div style={buttons}> <MeetingRoomOutlinedIcon style={fonts}/> <label style={label}>Menu 2 </label></div>
                     <div style={buttons}> <FavoriteBorderIcon style={fonts}/> <label style={label}>Menu 3 </label></div>
                 </div>
             </div>
             <img src={img} style={{ ...mainPhoto }}>
             </img>
+            {
+                toggle ? <Modal toggle={toggle} setToggle={() => setToggle(prev => !prev)}/> : null
+            }
         </div>
     )
 }
