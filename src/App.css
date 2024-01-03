@@ -7,6 +7,13 @@
   pointer-events: none;
 }
 
+
+.myphotos {
+  width: '50%' !important;
+  /* height: undefined; */
+  /* aspect-ratio: 1 */
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
