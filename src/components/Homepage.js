@@ -1,6 +1,9 @@
 import React from 'react'
 import img from '../images/mainImg.jpeg'
 import styles from '../styles'
+import ImageIcon from '@mui/icons-material/Image';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import MeetingRoomOutlinedIcon from '@mui/icons-material/MeetingRoomOutlined';
 
 const Homepage = () => {
     const mainPhoto = {
@@ -31,13 +34,19 @@ const Homepage = () => {
         height: '5vh',
         marginTop: '10px',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'flex-start',
+        cursor : 'pointer'
     }
 
     const label = {
         textAlign: 'center',
         color: 'white',
-        marginTop: '1%'
+        marginTop: '1%',
+        cursor : 'pointer'
+    }
+
+    const fonts = {
+        color: 'white', margin: '5 10 0 10', fontSize: 'large'
     }
 
     return (
@@ -47,9 +56,9 @@ const Homepage = () => {
                     <label style={{ fontWeight: '500' }}>POC Header</label>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <div style={buttons}><label style={label}>Menu 1 </label></div>
-                    <div style={buttons}><label style={label}>Menu 2 </label></div>
-                    <div style={buttons}><label style={label}>Menu 3 </label></div>
+                    <div style={buttons}><ImageIcon style={fonts} /> <label style={label}>Menu 1 </label></div>
+                    <div style={buttons}> <MeetingRoomOutlinedIcon style={fonts}/> <label style={label}>Menu 2 </label></div>
+                    <div style={buttons}> <FavoriteBorderIcon style={fonts}/> <label style={label}>Menu 3 </label></div>
                 </div>
             </div>
             <img src={img} style={{ ...mainPhoto }}>
