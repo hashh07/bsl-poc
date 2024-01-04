@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import img from '../images/mainImg.jpeg'
-import styles from '../styles'
 import ImageIcon from '@mui/icons-material/Image';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import MeetingRoomOutlinedIcon from '@mui/icons-material/MeetingRoomOutlined';
 import Modal from './Modal';
 
 const Homepage = () => {
-    const [toggle, setToggle] = useState(true)
+    const [toggle, setToggle] = useState(false)
     const mainPhoto = {
         position: 'absolute',
         top: '50%',
@@ -27,6 +26,7 @@ const Homepage = () => {
         zIndex: '1000',
         textAlign: 'center',
         transform: 'translate(-50%, -50%)',
+        boxShadow: '2px 2px 8px #000000'
     }
 
     const buttons = {

@@ -6,6 +6,8 @@ import img1 from '../images/img1.jpeg'
 import img2 from '../images/img2.jpeg'
 import img3 from '../images/img3.jpeg'
 import img4 from '../images/img4.jpeg'
+import img5 from '../images/img5.jpeg'
+import img6 from '../images/img6.jpeg'
 
 const CustomModal = ({ toggle, setToggle }) => {
     const data = [
@@ -13,17 +15,9 @@ const CustomModal = ({ toggle, setToggle }) => {
         img2,
         img3,
         img4,
+        img5,
+        img6
     ]
-    const modal = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        width: '80%',
-        height: '80%',
-        transform: 'translate(-50%, -50%)',
-        background: 'green',
-        zIndex: '1000'
-    }
     const icon = {
         cursor: 'pointer'
     }
@@ -57,6 +51,7 @@ const CustomModal = ({ toggle, setToggle }) => {
         height: '100%',
         display: 'block',
         p: 4,
+        background : 'white'
     }
     return (
         <Modal open={toggle} onClose={setToggle}
